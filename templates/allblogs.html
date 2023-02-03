@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+      h1 {text-align: center;}
+      h2 {text-align: center;}
+      p {text-align: left;}
+      div {text-align: left;}
+  </style>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1> OUR BLOG WEBSITE</h1>
+<div class="container mt-4">
+    {% for article in articles %}
+    <a href={{ article.get_url }} <h3>{{ article.title }}</h3></a>
+    <p class="lead mt-1">{{ article.description | truncatewords:20 }}</p>
+
+    {% endfor  %}
+</div>
+
+</body>
+</html>
